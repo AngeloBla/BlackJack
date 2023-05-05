@@ -16,5 +16,5 @@ pasta();
 
 
 
-mal sehen ob das stimmt was Eddi erzaehlt
+mal sehen ob das stimmt was Eddy erzaehlt
 >>>>>>> Stashed changes
