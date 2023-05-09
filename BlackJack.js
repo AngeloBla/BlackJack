@@ -1,5 +1,5 @@
-var spieler = [];
-var bank = [];
+let spieler = [];
+let bank = [];
 const Bube = 10;
 const Dame = 10;
 const König = 10;
@@ -19,23 +19,12 @@ function karten_austeilen() {
     deck.splice(randomIndex, 1); 
   }
 }
-  
-karten_austeilen();
-console.log("Der Spieler hat: "+spieler); 
-console.log("Die Bank hat: "+bank); 
-console.log("Möchten Sie eine weitere Karte ziehen?");
 
 function karte_ziehen() {
-  for (let i = 0; i < 1; i++) {
-    const randomIndex = Math.floor(Math.random() * deck.length);
-    spieler.push(deck[randomIndex]);
-    deck.splice(randomIndex, 1); 
-  }
+  const randomIndex = Math.floor(Math.random() * deck.length);
+  spieler.push(deck[randomIndex]);
+  deck.splice(randomIndex, 1); 
 }
-
-karte_ziehen();
-console.log("Der Spieler hat: "+spieler);
-pruefe_spielstand();
 
 function pruefe_spielstand() {
   let summeSpieler = 0;
@@ -44,12 +33,44 @@ function pruefe_spielstand() {
   }
   if (summeSpieler > 21) {
     console.log("Sie haben verloren. Ihre Karten haben einen Wert von " + summeSpieler);
+    neu_beginnen();
   }
   else if (summeSpieler === 21) {
     console.log("Sie haben GEWONNEN! Ihre Karten haben einen Wert von " + summeSpieler);
   }
   else if (summeSpieler < 21) {
-    console.log("Möchten Sie eine weitere Karte ziehen?");
+    console.log("Unter 21. Möchten Sie eine weitere Karte ziehen?");
     karte_ziehen();
   }
 }
+
+function pruefe_bank() {
+  let summeBank = 0;
+  for (let i = 0; i < bank.length; i++) {
+    summeBank += bank[i];
+  }
+  if (summeBank < 18) {
+    karte_ziehen_Bank();
+  }
+}
+
+function karte_ziehen_Bank() {
+  const randomIndex = Math.floor(Math.random() * deck.length);
+  bank.push(deck[randomIndex]);
+  deck.splice(randomIndex, 1); 
+}
+
+function neu_beginnen(){
+  spieler = [];
+  bank = [];
+}
+
+karten_austeilen();
+console.log("Der Spieler hat: "+spieler); 
+console.log("Die Bank hat: "+bank); 
+pruefe_spielstand();
+pruefe_bank();
+console.log("Der Spieler hat: "+spieler); 
+console.log("Die Bank hat: "+bank); 
+pruefe_spielstand();
+pruefe_bank();
