@@ -3,8 +3,6 @@ function hallo(name){
 }
 console.log(hallo("Ango"));
 
-<<<<<<< Updated upstream
-=======
 function pasta(Pastarezept) {
     console.log("Pastarezept")
     console.log("Die Soße bereitest du idealerweise vor der Pasta zu, sie sollte jetzt griffbereit sein.")
@@ -17,4 +15,3 @@ pasta();
 
 
 mal sehen ob das stimmt was Eddy erzaehlt
->>>>>>> Stashed changes
