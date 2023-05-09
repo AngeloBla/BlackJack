@@ -37,10 +37,15 @@ function pruefe_spielstand() {
   } else if (summeSpieler === 21) {
     console.log("Sie haben GEWONNEN! Ihre Karten haben einen Wert von " + summeSpieler);
   } else if (summeSpieler < 21) {
-    console.log("Unter 21. Möchten Sie eine weitere Karte ziehen?");
-    karte_ziehen();
+    let ziehen = confirm("Unter 21. Möchten Sie eine weitere Karte ziehen?");
+    if (ziehen) {
+      karte_ziehen();
+    } else {
+      pruefe_bank();
+    }
   }
 }
+
 
 function karte_ziehen_Bank() {
   const randomIndex = Math.floor(Math.random() * deck.length);
