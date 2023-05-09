@@ -6,7 +6,7 @@ const deck = [2, 3, 4, 5, 6, 7, 8, 9, 10, Bube, Dame, König, Ass];
 
 let spieler = [];
 let bank = [];
-
+ 
 function karten_austeilen() {
   for (let i = 0; i < 2; i++) {
     const randomIndex = Math.floor(Math.random() * deck.length);
