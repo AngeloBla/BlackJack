@@ -7,7 +7,7 @@ const deck = [2, 3, 4, 5, 6, 7, 8, 9, 10, Bube, Dame, König, Ass];
 let spieler = [];
 let bank = [];
 
-function karten_austeilen() {
+export function karten_austeilen() {
   for (let i = 0; i < 2; i++) {
     const randomIndex = Math.floor(Math.random() * deck.length);
     spieler.push(deck[randomIndex]);
@@ -21,13 +21,13 @@ function karten_austeilen() {
   }
 }
 
-function karte_ziehen() {
+export function karte_ziehen() {
   const randomIndex = Math.floor(Math.random() * deck.length);
   spieler.push(deck[randomIndex]);
   deck.splice(randomIndex, 1);
 }
 
-function pruefe_spielstand() {
+export function pruefe_spielstand() {
   let summeSpieler = 0;
   for (let i = 0; i < spieler.length; i++) {
     summeSpieler += spieler[i];
@@ -42,13 +42,13 @@ function pruefe_spielstand() {
   }
 }
 
-function karte_ziehen_Bank() {
+export function karte_ziehen_Bank() {
   const randomIndex = Math.floor(Math.random() * deck.length);
   bank.push(deck[randomIndex]);
   deck.splice(randomIndex, 1);
 }
 
-function pruefe_bank() {
+export function pruefe_bank() {
   let summeBank = 0;
   for (let i = 0; i < bank.length; i++) {
     summeBank += bank[i];
@@ -59,7 +59,7 @@ function pruefe_bank() {
   }
 }
 
-function neu_beginnen() {
+export function neu_beginnen() {
   spieler = [];
   bank = [];
   karten_austeilen();
