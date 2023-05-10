@@ -3,12 +3,8 @@ const Dame = 10;
 const König = 10;
 const Ass = 11;
 const deck = [2, 3, 4, 5, 6, 7, 8, 9, 10, Bube, Dame, König, Ass];
-<<<<<<< Updated upstream
 const deck_img = ["2-C.png", "3-C.png", "4-C.png", "5-C.png", "6-C.png", "7-C.png", "8-C.png", "9-C.png", "10-C.png", "J-C.png", "Q-C.png", "K-C.png", "A-C.png"]
 
-=======
-deck_img = ["2-C.png", "3-C.png", "4-C.png", "5-C.png", "6-C.png", "7-C.png", "8-C.png", "9-C.png", "10-C.png", "J-C.png", "Q-C.png", "K-C.png", "A-C.png"]
->>>>>>> Stashed changes
 
 const spielfeld_pc = document.getElementById("pc");
 const spielfeld_spieler = document.getElementById("spieler");
@@ -17,12 +13,13 @@ ziehenButton.addEventListener("click", function() {
     karte_ziehen();
     pruefe_spielstand();
     pruefe_bank();
-});
+}
 
 let spieler = [];
 let bank = [];
 
 function karten_austeilen() {
+
     for (let i = 0; i < 2; i++) {
       const randomIndex = Math.floor(Math.random() * deck.length);
       spieler.push(deck[randomIndex]);
@@ -38,7 +35,6 @@ function karten_austeilen() {
       spielfeld_spieler.innerHTML += '<img src="cards/' + deck_img[randomIndex] + '">';
     }
   }
-  
 
 function karte_ziehen() {
   const randomIndex = Math.floor(Math.random() * deck.length);
@@ -67,7 +63,6 @@ function pruefe_spielstand() {
       }
     }
   }
-  
 
 function karte_ziehen_Bank() {
   const randomIndex = Math.floor(Math.random() * deck.length);
@@ -92,3 +87,4 @@ function neu_beginnen() {
   bank = [];
   karten_austeilen();
 }
+
