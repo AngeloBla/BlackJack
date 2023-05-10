@@ -3,8 +3,12 @@ const Dame = 10;
 const König = 10;
 const Ass = 11;
 const deck = [2, 3, 4, 5, 6, 7, 8, 9, 10, Bube, Dame, König, Ass];
+<<<<<<< Updated upstream
 const deck_img = ["2-C.png", "3-C.png", "4-C.png", "5-C.png", "6-C.png", "7-C.png", "8-C.png", "9-C.png", "10-C.png", "J-C.png", "Q-C.png", "K-C.png", "A-C.png"]
 
+=======
+deck_img = ["2-C.png", "3-C.png", "4-C.png", "5-C.png", "6-C.png", "7-C.png", "8-C.png", "9-C.png", "10-C.png", "J-C.png", "Q-C.png", "K-C.png", "A-C.png"]
+>>>>>>> Stashed changes
 
 const spielfeld_pc = document.getElementById("pc");
 const spielfeld_spieler = document.getElementById("spieler");
